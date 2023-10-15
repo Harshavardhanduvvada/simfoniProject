@@ -258,7 +258,7 @@ function Navbar() {
 
                 <div className="ml-4 flow-root lg:ml-6">
                   <Link
-                    to={"/ntersT"}
+                    to={"/IntersT"}
                     className="group -m-2 flex items-center p-2"
                     style={{ color: mode === "dark" ? "white" : "" }}
                   >

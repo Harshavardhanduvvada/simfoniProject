@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import myContext from "../../context/data/myContext";
-
+import IncreaseDecrease from "../incresedecrese/IncreseDecrese";
+import { AiOutlineHeart } from "react-icons/ai";
 function ProductCard() {
   const context = useContext(myContext);
   const { mode } = context;
@@ -52,6 +53,8 @@ function ProductCard() {
                   style={{ color: mode === "dark" ? "white" : "" }}
                 >
                   ₹ 500
+                  <IncreaseDecrease />
+                  <AiOutlineHeart />
                 </p>
                 <div className=" flex justify-center">
                   <button
@@ -99,6 +102,8 @@ function ProductCard() {
                   style={{ color: mode === "dark" ? "white" : "" }}
                 >
                   ₹ 500
+                  <IncreaseDecrease />
+                  <AiOutlineHeart />
                 </p>
                 <div className=" flex justify-center">
                   <button
@@ -146,6 +151,8 @@ function ProductCard() {
                   style={{ color: mode === "dark" ? "white" : "" }}
                 >
                   ₹ 500
+                  <IncreaseDecrease />
+                  <AiOutlineHeart />
                 </p>
                 <div className=" flex justify-center">
                   <button
@@ -192,6 +199,8 @@ function ProductCard() {
                   style={{ color: mode === "dark" ? "white" : "" }}
                 >
                   ₹ 500
+                  <IncreaseDecrease />
+                  <AiOutlineHeart />
                 </p>
                 <div className=" flex justify-center">
                   <button
@@ -239,6 +248,8 @@ function ProductCard() {
                   style={{ color: mode === "dark" ? "white" : "" }}
                 >
                   ₹ 500
+                  <IncreaseDecrease />
+                  <AiOutlineHeart />
                 </p>
                 <div className=" flex justify-center">
                   <button

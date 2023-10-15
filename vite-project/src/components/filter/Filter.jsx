@@ -9,7 +9,7 @@ function Filter() {
 
   return (
     <div>
-      <div className=" container m-1 px-4 mt-5 ">
+      <div className=" container mx-auto px-4 mt-5 ">
         <div
           className="p-5 rounded-lg bg-gray-100 drop-shadow-xl border border-gray-200"
           style={{
@@ -81,7 +81,7 @@ function Filter() {
                     color: mode === "dark" ? "white" : "",
                   }}
                 />
-                <div className="mt-2 md:mt-0 md:w-1/3 p-2">
+                <div className="mx-auto md:mt-0 md:w-1/3 p-2">
                   <button className="px-4 py-2 rounded-md bg-blue-500 text-white text-sm">
                     Upload
                   </button>
@@ -94,7 +94,7 @@ function Filter() {
         </div>
       </div>
       <div>
-        <div className=" container m-1 px-4 mt-5 ">
+        <div className=" container mx-auto px-4 mt-5 ">
           <div
             className="p-5 rounded-lg bg-gray-100 drop-shadow-xl border border-gray-200"
             style={{

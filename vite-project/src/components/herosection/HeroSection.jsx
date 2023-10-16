@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { GrCaretNext, GrCaretPrevious } from "react-icons/gr";
 
 function HeroSection() {

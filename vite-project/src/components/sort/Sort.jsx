@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 function Sort({ handleSort }) {
   const [selectedOption, setSelectedOption] = useState("titleAsc");

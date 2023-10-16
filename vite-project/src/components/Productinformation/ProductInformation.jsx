@@ -1,28 +1,15 @@
-import React, { useContext } from "react";
 import Layout from "../../components/layout/Layout";
-import Navbar from "../navbar/Navbar";
-import Filter from "../../components/filter/Filter";
-import Footer from "../../components/footer/Footer";
+
 import Newarrivals from "../newarrivals/Newarrivals";
-import IncreaseDecrease from "./IncreaseDecrease"; // Import IncreaseDecrease component here
+import IncreaseDecrease from "../incresedecrese/IncreseDecrese";
 
 function ProductInformation() {
   return (
     <Layout>
-      <Navbar />
-      <Filter />
       <div className="p-3 sm:w-1/5  drop-shadow-lg ">
-        <div
-          className="h-full border-2 hover:shadow-gray-100 hover:shadow-2xl transition-shadow duration-300 ease-in-out    border-gray-200 border-opacity-60 rounded-2xl overflow-hidden"
-          style={{
-            backgroundColor: mode === "dark" ? "rgb(46 49 55)" : "",
-            color: mode === "dark" ? "white" : "",
-          }}
-        >
-          {/* Rest of your component */}
+        <div className="h-full border-2 hover:shadow-gray-100 hover:shadow-2xl transition-shadow duration-300 ease-in-out    border-gray-200 border-opacity-60 rounded-2xl overflow-hidden">
           <p className="leading-relaxed mb-3">
-            <IncreaseDecrease /> {/* Use the IncreaseDecrease component here */}
-            {/* <AiOutlineHeart /> */}
+            <IncreaseDecrease />
           </p>
           <div className="flex justify-center">
             <button
@@ -36,7 +23,6 @@ function ProductInformation() {
       </div>
 
       <Newarrivals />
-      <Footer />
     </Layout>
   );
 }

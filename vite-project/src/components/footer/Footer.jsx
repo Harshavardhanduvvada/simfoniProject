@@ -1,20 +1,22 @@
-import React, { useContext } from "react";
-import myContext from "../../context/data/myContext";
-
 function Footer() {
-  const context = useContext(myContext);
-  const { mode } = context;
-
   return (
     <div>
-      <div className=" container m-1 px-4 mt-5 ">
-        <div
-          className="p-5 rounded-lg bg-gray-100 drop-shadow-xl border border-gray-200"
-          style={{
-            backgroundColor: mode === "dark" ? "#282c34" : "",
-            color: mode === "dark" ? "white" : "",
-          }}
-        ></div>
+      <div>
+        <div>
+          <div
+            style={{
+              background: "rgb(219, 39, 119)",
+              height: "70px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <p style={{ color: "white", fontWeight: "bold" }}>
+              Simfoni - All Rights Reserved
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

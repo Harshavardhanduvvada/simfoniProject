@@ -1,7 +1,6 @@
 import { Fragment, useContext, useState } from "react";
 import myContext from "../../context/data/myContext";
-import { BsFillCloudSunFill } from "react-icons/bs";
-import { FiSun } from "react-icons/fi";
+
 import { Link } from "react-router-dom";
 import { Dialog, Transition } from "@headlessui/react";
 import { RxCross2 } from "react-icons/rx";
@@ -12,7 +11,7 @@ import { GrNotification } from "react-icons/gr";
 
 function Navbar() {
   const context = useContext(myContext);
-  const { mode, toggleMode } = context;
+  console.log(context);
 
   const [open, setOpen] = useState(false);
 
@@ -42,13 +41,7 @@ function Navbar() {
               leaveFrom="translate-x-0"
               leaveTo="-translate-x-full"
             >
-              <Dialog.Panel
-                className="relative flex w-full max-w-xs flex-col overflow-y-auto bg-white pb-12 shadow-xl"
-                style={{
-                  backgroundColor: mode === "dark" ? "rgb(62, 64, 66)" : "",
-                  color: mode === "dark" ? "white" : "",
-                }}
-              >
+              <Dialog.Panel className="relative flex w-full max-w-xs flex-col overflow-y-auto bg-white pb-12 shadow-xl">
                 <div className="flex px-4 pb-2 pt-28">
                   <button
                     type="button"
@@ -64,14 +57,12 @@ function Navbar() {
                   <Link
                     to={"/Catlog"}
                     className="text-sm font-medium text-gray-900 "
-                    style={{ color: mode === "dark" ? "white" : "" }}
                   >
                     Catlog
                   </Link>
                   <div className="flow-root">
                     <Link
                       to={"/BuyDesk"}
-                      style={{ color: mode === "dark" ? "white" : "" }}
                       className="-m-2 block p-2 font-medium text-gray-900"
                     >
                       BuyDesk
@@ -82,17 +73,13 @@ function Navbar() {
                     <Link
                       to={"/dashboard"}
                       className="-m-2 block p-2 font-medium text-gray-900"
-                      style={{ color: mode === "dark" ? "white" : "" }}
                     >
                       Dashboard
                     </Link>
                   </div>
 
                   <div className="flow-root">
-                    <a
-                      className="-m-2 block p-2 font-medium text-gray-900 cursor-pointer"
-                      style={{ color: mode === "dark" ? "white" : "" }}
-                    >
+                    <a className="-m-2 block p-2 font-medium text-gray-900 cursor-pointer">
                       Logout
                     </a>
                   </div>
@@ -117,10 +104,7 @@ function Navbar() {
                       alt=""
                       className="block h-auto w-5 flex-shrink-0"
                     />
-                    <span
-                      className="ml-3 block text-base font-medium text-gray-900"
-                      style={{ color: mode === "dark" ? "white" : "" }}
-                    >
+                    <span className="ml-3 block text-base font-medium text-gray-900">
                       INDIA
                     </span>
                     <span className="sr-only">, change currency</span>
@@ -132,23 +116,13 @@ function Navbar() {
         </Dialog>
       </Transition.Root>
       <header className="relative bg-white">
-        <p
-          className="flex h-10 items-center justify-center bg-pink-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8"
-          style={{
-            backgroundColor: mode === "dark" ? "rgb(62 64 66)" : "",
-            color: mode === "dark" ? "white" : "",
-          }}
-        >
+        <p className="flex h-10 items-center justify-center bg-pink-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
           Simfoni E-cart Website
         </p>
 
         <nav
           aria-label="Top"
           className="bg-gray-100 px-4 sm:px-6 lg:px-8 shadow-xl "
-          style={{
-            backgroundColor: mode === "white" ? "#282c34" : "",
-            color: mode === "dark" ? "white" : "",
-          }}
         >
           <div className="">
             <div className="flex h-16 items-center">
@@ -156,23 +130,19 @@ function Navbar() {
                 type="button"
                 className="rounded-md bg-white p-2 text-gray-400 lg:hidden"
                 onClick={() => setOpen(true)}
-                style={{
-                  backgroundColor: mode === "dark" ? "rgb(80 82 87)" : "",
-                  color: mode === "dark" ? "white" : "",
-                }}
               >
                 <span className="sr-only">Open menu</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke-width="1.5"
+                  strokeWidth="1.5"
                   stroke="currentColor"
-                  class="w-6 h-6"
+                  className="w-6 h-6"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                   />
                 </svg>
@@ -182,38 +152,11 @@ function Navbar() {
               <div className="ml-4 flex lg:ml-0">
                 <Link to={"/"} className="flex">
                   <div className="flex ">
-                    <h1
-                      className=" text-2xl font-bold text-black  px-2 py-1 rounded"
-                      style={{ color: mode === "dark" ? "white" : "" }}
-                    >
+                    <h1 className=" text-2xl font-bold text-black  px-2 py-1 rounded">
                       Simfoni
                     </h1>
                   </div>
                 </Link>
-
-                <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                  <Link
-                    to={"/Catlog"}
-                    className="text-sm font-medium text-gray-700 "
-                    style={{ color: mode === "dark" ? "white" : "" }}
-                  >
-                    Catlog
-                  </Link>
-                  <Link
-                    to={"/BuyDesk"}
-                    className="text-sm font-medium text-gray-700 "
-                    style={{ color: mode === "dark" ? "white" : "" }}
-                  >
-                    BuyDesk
-                  </Link>
-                  <Link
-                    to={"/dashboard"}
-                    className="text-sm font-medium text-gray-700 "
-                    style={{ color: mode === "dark" ? "white" : "" }}
-                  >
-                    Dashboard
-                  </Link>
-                </div>
               </div>
 
               <div className="ml-auto flex items-center">
@@ -234,40 +177,17 @@ function Navbar() {
                     id="searchkey"
                     placeholder="Search here"
                     className="px-8 py-3 w-full rounded-md bg-violet-0 border-transparent outline-0 text-sm"
-                    style={{
-                      backgroundColor: mode === "dark" ? "rgb(64 66 70)" : "",
-                      color: mode === "dark" ? "white" : "",
-                    }}
                   />
                 </div>
-                {/* Search */}
-                <div className="flex lg:ml-6">
-                  <button className="" onClick={toggleMode}>
-                    {/* <MdDarkMode size={35} style={{ color: mode === 'dark' ? 'white' : '' }} /> */}
-                    {mode === "light" ? (
-                      <FiSun className="" size={30} />
-                    ) : "dark" ? (
-                      <BsFillCloudSunFill size={30} />
-                    ) : (
-                      ""
-                    )}
-                  </button>
-                </div>
-
-                {/* Cart */}
 
                 <div className="ml-4 flow-root lg:ml-6">
                   <Link
                     to={"/IntersT"}
                     className="group -m-2 flex items-center p-2"
-                    style={{ color: mode === "dark" ? "white" : "" }}
                   >
                     <BiWallet />
 
-                    <span
-                      className="ml-2 text-sm font-medium text-gray-700 group-"
-                      style={{ color: mode === "dark" ? "white" : "" }}
-                    >
+                    <span className="ml-2 text-sm font-medium text-gray-700 group-">
                       0
                     </span>
                     <span className="sr-only">items in cart, view bag</span>
@@ -279,14 +199,10 @@ function Navbar() {
                   <Link
                     to={"/cart"}
                     className="group -m-2 flex items-center p-2"
-                    style={{ color: mode === "dark" ? "white" : "" }}
                   >
                     <AiOutlineHeart />
 
-                    <span
-                      className="ml-2 text-sm font-medium text-gray-700 group-"
-                      style={{ color: mode === "dark" ? "white" : "" }}
-                    >
+                    <span className="ml-2 text-sm font-medium text-gray-700 group-">
                       0
                     </span>
                     <span className="sr-only">items in cart, view bag</span>
@@ -295,70 +211,27 @@ function Navbar() {
                   {/*like*/}
                 </div>
                 <div className="ml-4 flow-root lg:ml-6">
-                  <Link
-                    to={"/"}
-                    className="group -m-2 flex items-center p-2"
-                    style={{ color: mode === "dark" ? "white" : "" }}
-                  >
+                  <Link to={"/"} className="group -m-2 flex items-center p-2">
                     <AiOutlineShoppingCart />
-                    <span
-                      className="ml-2 text-sm font-medium text-gray-700 group-"
-                      style={{ color: mode === "dark" ? "white" : "" }}
-                    >
+                    <span className="ml-2 text-sm font-medium text-gray-700 group-">
                       0
                     </span>
                     <span className="sr-only">items in cart, view bag</span>
                   </Link>
                 </div>
                 <div className="ml-4 flow-root lg:ml-6">
-                  <Link
-                    to={"/"}
-                    className="group -m-2 flex items-center p-2"
-                    style={{ color: mode === "dark" ? "white" : "" }}
-                  >
+                  <Link to={"/"} className="group -m-2 flex items-center p-2">
                     <GrNotification />
 
-                    <span
-                      className="ml-2 text-sm font-medium text-gray-700 group-"
-                      style={{ color: mode === "dark" ? "white" : "" }}
-                    >
+                    <span className="ml-2 text-sm font-medium text-gray-700 group-">
                       0
                     </span>
                     <span className="sr-only">items in cart, view bag</span>
                   </Link>
                 </div>
+
                 <div className="hidden lg:ml-8 lg:flex">
-                  <a href="#" className="flex items-center text-gray-700 ">
-                    <img
-                      src="https://ecommerce-sk.vercel.app/img/indiaflag.png"
-                      alt=""
-                      className="block h-auto w-5 flex-shrink-0"
-                    />
-                    <span
-                      className="ml-3 block text-sm font-medium"
-                      style={{ color: mode === "dark" ? "white" : "" }}
-                    >
-                      INDIA
-                    </span>
-                  </a>
-                </div>
-                <div className="hidden lg:ml-8 lg:flex">
-                  <a href="#" className="flex items-center text-gray-700 ">
-                    <img
-                      className="inline-block w-10 h-10 rounded-full"
-                      src="https://overreacted.io/static/profile-pic-c715447ce38098828758e525a1128b87.jpg"
-                      alt="Dan_Abromov"
-                    />
-                  </a>
-                  <a
-                    className="ml-3 block text-sm font-medium"
-                    style={{
-                      color: mode === "dark" ? "white" : "",
-                      lineHeight: "2.25rem",
-                    }}
-                  >
-                    Harsha
-                  </a>
+                  <a className="ml-3 block text-sm font-medium">Harsha</a>
                 </div>
               </div>
             </div>
